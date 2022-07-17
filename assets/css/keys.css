@@ -1,0 +1,32 @@
+#wordsBox {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+#wordsBox .word {
+  display: flex;
+  float: left;
+}
+#wordsBox .key {
+  font-size: 22px;
+  min-width: 8px;
+  height: 40px;
+  text-align: center;
+  /* border: 1px solid black; */
+  color: black;
+  font-family: "Roboto Mono", monospace;
+}
+#wordsBox .key.done {
+  color: rgb(170, 170, 170);
+}
+#wordsBox .key.wrong {
+  color: red;
+}
+#wordsBox .cursor {
+  width: 1px;
+  height: 25px;
+  background-color: black;
+  float: left;
+}
+
+/*# sourceMappingURL=keys.css.map */

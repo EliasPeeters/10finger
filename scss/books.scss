@@ -1,0 +1,87 @@
+@import "var.scss";
+
+.headingSettings {
+    margin-bottom: 0 !important;
+}
+
+.bookshelf {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    height: 450px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+    .emptyBook {
+        width: 180px;
+        height: 1px;
+        margin: 40px;
+        margin-bottom: 0;
+        background-color: $backgroundColor;
+    }
+
+    .book {
+        width: 220px;
+        // height: 280px;
+        border: 2px solid $darkOne;
+        margin: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        &.selected {
+            // border-width: 2px;
+            box-shadow: 10px 10px 0 $lightOne;
+        }
+
+        .bookcover {
+            width: 160px;
+            height: 200px;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .button {
+            width: 150px;
+            margin-left: 35px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            height: 33px;
+        }
+    }
+
+    .progess {
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .progessBar {
+            margin-left: 15px;
+            width: 145px;
+            margin-right: 10px;
+            height: 10px;
+            background-color: lightgray;
+            border-radius: 100px;
+            margin-top: 5px;
+
+            .progessInner {
+                background-color: $darkOne;
+                height: 100%;
+                width: 70px;
+                border-radius: 100px;
+            }
+        }
+
+        .progessSpacer {
+            height: 22px;
+            width: 145px;
+        }
+
+        .percent {
+            color: $darkOne;
+            margin: 0;
+        }
+    }
+}

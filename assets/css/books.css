@@ -1,0 +1,74 @@
+.headingSettings {
+  margin-bottom: 0 !important;
+}
+
+.bookshelf {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 50px;
+  height: 450px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bookshelf .emptyBook {
+  width: 180px;
+  height: 1px;
+  margin: 40px;
+  margin-bottom: 0;
+  background-color: #EDF6F9;
+}
+.bookshelf .book {
+  width: 220px;
+  border: 2px solid #006D77;
+  margin: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.bookshelf .book.selected {
+  box-shadow: 10px 10px 0 #83C5BE;
+}
+.bookshelf .book .bookcover {
+  width: 160px;
+  height: 200px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.bookshelf .book .button {
+  width: 150px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  height: 33px;
+}
+.bookshelf .progess {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.bookshelf .progess .progessBar {
+  margin-left: 15px;
+  width: 145px;
+  margin-right: 10px;
+  height: 10px;
+  background-color: lightgray;
+  border-radius: 100px;
+  margin-top: 5px;
+}
+.bookshelf .progess .progessBar .progessInner {
+  background-color: #006D77;
+  height: 100%;
+  width: 70px;
+  border-radius: 100px;
+}
+.bookshelf .progess .progessSpacer {
+  height: 22px;
+  width: 145px;
+}
+.bookshelf .progess .percent {
+  color: #006D77;
+  margin: 0;
+}
+
+/*# sourceMappingURL=books.css.map */

@@ -1,0 +1,46 @@
+#wordsBox {
+    
+    display: block;
+    clear: both;
+    overflow: hidden;
+
+    .word {
+        // background-color: aqua;
+        display: flex;
+        float: left;
+    }
+    
+    .key {
+        font-size: 22px;
+        // float: left;
+        // display: inline-block;
+        min-width: 8px;
+        height: 40px;
+        text-align: center;
+        /* border: 1px solid black; */
+        color: black;
+        font-family: 'Roboto Mono', monospace;
+
+        &.done {
+            color: rgb(170, 170, 170);
+        }
+
+        &.wrong {
+            color: red;
+        }
+    }
+
+    .cursor {
+        width: 1px;
+        height: 25px;
+        background-color: black;
+        float: left;
+    }
+}
+
+
+
+
+
+
+

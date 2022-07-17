@@ -1,0 +1,34 @@
+{
+  "name": "10finger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-local": "node main.js",
+    "sass": "sass ./scss:./assets/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliasPeeters/10finger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliasPeeters/10finger/issues"
+  },
+  "homepage": "https://github.com/EliasPeeters/10finger#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "correct-frequency-random-letters": "^1.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "sass": "^1.53.0",
+    "sentence-generator": "^1.0.1",
+    "txtgen": "^3.0.2",
+    "util2": "^1.0.1",
+    "uuid": "^8.3.2"
+  }
+}

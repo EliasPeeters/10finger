@@ -1,0 +1,90 @@
+@import "var.scss";
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: $backgroundColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    .mainBox {
+        border: 1px solid black;
+        max-width: 800px;
+        max-height: 200px;
+        width: calc(98% - 100px);
+        padding: 50px;
+        .stats {
+            p {
+                float: left;
+                margin-right: 10px;
+            }
+            
+            #speed {
+                margin-right: 30px;
+            }
+        }
+
+        .message {
+            clear: both;
+            text-align: center;
+            color: $darkThree;
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+
+    .buttonBox {
+        border: 1px solid black;
+        width: calc(98% - 100px);
+        max-width: 800px;
+        height: 50px;
+        padding: 50px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.button { 
+    color: white;
+    width: 200px;
+    text-align: center;      
+    transition: 300ms;    
+    margin-bottom: 10px;
+    height: 43px;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    border: none;
+    font-size: 16px;
+    
+
+    &.one {
+        background-color: $darkOne;
+        box-shadow: 5px 5px 0px $lightOne;   
+    }
+
+    &.two {
+        background-color: $darkTwo;
+        box-shadow: 5px 5px 0px $lightTwo;   
+    }
+
+    &.three {
+        background-color: $darkThree;
+        box-shadow: 5px 5px 0px $lightThree;   
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 0px;   
+    }
+}

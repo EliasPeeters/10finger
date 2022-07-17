@@ -1,0 +1,97 @@
+#blackBox {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  z-index: 10;
+  transition: 400ms;
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  height: 400px;
+  max-width: 800px;
+  width: 95%;
+  background-color: #EDF6F9;
+  top: -450px;
+  z-index: 11;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: 200ms;
+}
+.overlay.bigoverlay {
+  max-width: 1000px;
+  height: 700px;
+  top: -800px;
+}
+.overlay.bigoverlay.open {
+  top: calc(50% - 350px);
+}
+.overlay.open {
+  top: calc(50% - 200px);
+}
+.overlay h1 {
+  margin-bottom: 50px;
+}
+.overlay .heading {
+  text-align: center;
+}
+.overlay .overlay_buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  clear: both;
+}
+.overlay .bigoverlay_buttons {
+  margin-top: 70px;
+}
+.overlay .input {
+  background-color: #EDF6F9;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 30px;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 16px;
+  transition: 300ms;
+}
+.overlay .input:focus {
+  outline: none;
+  border-bottom: 2px solid #006D77;
+}
+.overlay .stats {
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border: 2px solid #006D77;
+}
+.overlay .stats.one {
+  border-color: #006D77;
+  box-shadow: 10px 10px 0 #83C5BE;
+}
+.overlay .stats.two {
+  border-color: #E29578;
+  box-shadow: 10px 10px 0 #FFDDD2;
+}
+.overlay .stats.three {
+  background-color: #387800;
+  box-shadow: 10px 10px 0 #8EC482;
+}
+.overlay .stats h3 {
+  text-align: center;
+}
+.overlay .stats .statsBox_Wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.overlay .stats .statsBox_Wrapper .statsBox p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=overlay.css.map */

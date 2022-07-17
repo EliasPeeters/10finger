@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/css/keys.css">
+        <link rel="stylesheet" href="../assets/css/general.css">
+        <link rel="stylesheet" href="../assets/css/overlay.css">
+        <link rel="stylesheet" href="../assets/css/books.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+    </head>
+
+    <body id="body">
+
+        <script>
+            let loggedIn = <%- data.loggedIn %>
+        </script>
+
+        <%- include ("partials/blackBox") %>
+        <%- include ("partials/login") %>
+        <%- include ("partials/register") %>
+        <%- include ("partials/profile") %>
+        <%- include ("partials/settings") %>
+
+        
+
+        <div class="mainBox">
+            <div class="stats">
+                <p>Speed:</p>
+                <p id="speed">0 wpm</p>
+        
+                <p>Accurarcy:</p>
+                <p id="accuarcy">0 %</p>
+            </div>
+
+            <p class="message" id="message">You did the complete book!</p>
+            <div id="wordsBox">
+                <!-- <div class="key">T</div>
+                <div class="key">h</div> -->
+            </div>
+        </div>
+
+        <div class="buttonBox">
+            <% if (data.loggedIn) { %>
+                <button class="button one" onclick="openProfile()">Profil</button>
+                <button class="button two" onclick="openSettings()">Settings</button>
+                <button class="button three" onclick="window.location = '/logout'">Logout</button>
+            <% } else { %> 
+            <button class="button one" onclick="openLogin()">Login</button>
+            <button class="button two" onclick="openRegister()">Register</button>
+            <% } %> 
+        </div>
+
+        
+        
+
+        
+
+        <script src="../assets/js/keyInput.js"></script>
+        <script src="../assets/js/getNewText.js"></script>
+        <script src="../assets/js/printText.js"></script>
+        <script src="../assets/js/calculate.js"></script>
+        <script src="../assets/js/requests.js"></script>
+        <script src="../assets/js/books.js"></script>
+
+        <script src="../assets/js/main.js"></script>
+
+        <script src="../assets/js/overlay.js"></script>
+
+
+    </body>
+
+</html>
+
