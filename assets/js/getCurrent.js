@@ -4,5 +4,8 @@ function getCurrent() {
     xmlHttp.open("GET", url, false);
     xmlHttp.send(null);
     let current = (xmlHttp.responseText);
-    document.getElementById('homeCurrent').innerHTML = current
+    if (current != '401') {
+        document.getElementById('homeCurrent').innerHTML = current
+    }
+    
 }
