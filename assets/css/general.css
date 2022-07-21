@@ -131,4 +131,13 @@ body .buttonBox {
   background-color: white;
 }
 
+.adWrapperRight {
+  position: fixed;
+  height: 400px;
+  width: 250px;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  right: 0;
+}
+
 /*# sourceMappingURL=general.css.map */

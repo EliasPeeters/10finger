@@ -161,3 +161,12 @@ body {
         background-color: $backgroundColor;
     }
 }
+
+.adWrapperRight {
+    position: fixed;
+    height: 400px;
+    width: 250px;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: $shadow;
+    right: 0;
+}
