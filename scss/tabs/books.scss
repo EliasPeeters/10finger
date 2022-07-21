@@ -1,0 +1,120 @@
+@import "../var.scss";
+
+.tabContent {
+    .bookTab {
+        display: none;
+
+        padding-top: 70px;
+
+        .bookWrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 30px;
+            justify-content: space-between;
+            overflow-y: scroll;
+            height: 460px;
+
+            .book {
+                width: 300px;
+                height: 200px;
+                border-radius: 10px;
+                display: flex;
+                margin-bottom: 30px;
+
+                &.selected {
+                    .bookInfo {
+                        border: 2px solid $darkOne;
+                    }
+                }
+    
+                .cover {
+                    width: 105px;
+                    height: 140px;
+                    float: left;
+                    margin-top: 30px;
+                    box-shadow: $shadowSoft;
+                    border-radius: 10px;
+                    z-index: 3;
+                }
+    
+                .title {
+                    text-align: center;
+                    color: $darkOne;
+                    font-weight: bold;
+                    margin-bottom: 2px;
+                }
+
+                .author {
+                    margin-top: 0;
+                    font-size: 14px;
+                    color: gray;
+                    text-align: center;
+                }
+    
+                .bookInfo {
+                    background-color: $backgroundColor;
+                    box-shadow: $shadowSoft;
+                    width: 250px;
+                    height: 200px;
+                    margin-left: -20px;
+                    padding-left: 20px;
+                    z-index: 2;
+                    border-radius: 10px;
+
+                    .starWrapper {
+                        margin-left: 30px;
+                        overflow: hidden;
+                        img {
+                            width: 20px;
+                            margin-left: 5px;
+                            float: left;
+                        }
+                        
+                    }
+
+                    .lines {
+                        color: gray;
+                        text-align: center;
+                        margin-top: 4px;
+                        
+                    }
+
+                    .progress {
+                        display: none;
+                        margin-top: 20px;
+                        width: 150px;
+                        margin-left: 25px;
+                        height: 5px;
+                        border-radius: 100px;
+                        background-color: $darkOne;
+                    }
+
+                    .buttonPieWrapper {
+                        display: flex;
+                        justify-content: center;
+
+                        .button {
+                            width: 100px;
+                            font-size: 12px;
+                            height: 30px;
+                            margin-top: 20px;
+
+                        }
+                    }
+                    
+                }  
+
+
+            }
+        }
+
+        
+    }
+
+    &.books {
+        .bookTab {
+            display: block;
+        }
+    }
+}
+

@@ -11,9 +11,12 @@ app.post('/api/selectBook', async (req, res) => {
     }
 
     let query = `UPDATE user
-                    SET currentBook = ${mysql.escape(req.body.id)}
+                    SET    
+                        currentBook = ${mysql.escape(req.body.bookID)},
+                        currentText = null
                     WHERE user_id = ${mysql.escape(user.id)}`
     await connection.asyncquery(query)
+
 
 
     // check for progress

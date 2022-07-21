@@ -4,6 +4,16 @@
         <link rel="stylesheet" href="../assets/css/general.css">
         <link rel="stylesheet" href="../assets/css/overlay.css">
         <link rel="stylesheet" href="../assets/css/books.css">
+        <link rel="stylesheet" href="../assets/css/sidebar.css">
+        
+        <link rel="stylesheet" href="../assets/css/textSelector.css">
+        <link rel="stylesheet" href="../assets/css/profile.css">
+
+        <link rel="stylesheet" href="../assets/css/tabs/books.css">
+        <link rel="stylesheet" href="../assets/css/tabs/generale.css">
+        <link rel="stylesheet" href="../assets/css/tabs/courses.css">
+        <link rel="stylesheet" href="../assets/css/tabs/pie.css">
+        <link rel="stylesheet" href="../assets/css/tabs/piebackground.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -22,25 +32,61 @@
         <%- include ("partials/profile") %>
         <%- include ("partials/settings") %>
 
+        <% if (data.loggedIn) { %>
+            <%- include ("partials/sidebar") %>
+        <% } %> 
         
 
-        <div class="mainBox">
-            <div class="stats">
-                <p>Speed:</p>
-                <p id="speed">0 wpm</p>
         
-                <p>Accurarcy:</p>
-                <p id="accuarcy">0 %</p>
+
+
+        <div id="contentWrapper">
+
+            <div class="logo"></div>
+            <!-- <img class="logo" src="/assets/img/logo.png"> -->
+
+            <!-- <div class="spacer"></div> -->
+            <div class="mainBox">
+                <div class="stats">
+                    <p>Speed:</p>
+                    <p id="speed">0 wpm</p>
+            
+                    <p>Accurarcy:</p>
+                    <p id="accuarcy">0 %</p>
+                </div>
+    
+                <p class="message" id="message">You did the complete book!</p>
+                <div id="wordsBox">
+                    <!-- <div class="key">T</div>
+                    <div class="key">h</div> -->
+                </div>
             </div>
 
-            <p class="message" id="message">You did the complete book!</p>
-            <div id="wordsBox">
-                <!-- <div class="key">T</div>
-                <div class="key">h</div> -->
-            </div>
+            
+
+            <% if (!data.loggedIn) { %>
+                <div class="buttonBox"> 
+                    <button class="button one" onclick="openLogin()">Login</button>
+                    <button class="button two" onclick="openRegister()">Register</button>
+                </div>
+            <% } else { %> 
+                <div class="homeBox" id="homeCurrent"> 
+
+                    <img class="cover" src="/assets/img/bookcover/produktManagementNew.png">
+                    <div>
+                        <p class="title">The Product Book</p>
+                        <p class="author">Product School</p>
+                    </div>
+
+                    <div class="piebackground home" style="--p:100"> 32 %</div>
+
+                    <div class="pie home" style="--p:32"> </div>    
+                </div>
+            <% } %> 
         </div>
+        
 
-        <div class="buttonBox">
+        <!-- <div class="buttonBox">
             <% if (data.loggedIn) { %>
                 <button class="button one" onclick="openProfile()">Profil</button>
                 <button class="button two" onclick="openSettings()">Settings</button>
@@ -49,8 +95,9 @@
             <button class="button one" onclick="openLogin()">Login</button>
             <button class="button two" onclick="openRegister()">Register</button>
             <% } %> 
-        </div>
+        </div> -->
 
+        
         
         
 
@@ -62,6 +109,9 @@
         <script src="../assets/js/calculate.js"></script>
         <script src="../assets/js/requests.js"></script>
         <script src="../assets/js/books.js"></script>
+        <script src="../assets/js/textSelector.js"></script>
+        <script src="../assets/js/sidebarOpen.js"></script>
+        <script src="../assets/js/getCurrent.js"></script>
 
         <script src="../assets/js/main.js"></script>
 

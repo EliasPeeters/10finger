@@ -25,7 +25,6 @@ app.get('/api/getbooks', async (req, res) => {
     let resultBooks = await connection.asyncquery(queryBooks)
 
     if (user.premium == 0) {
-        console.log(user)
         for (let i = 0; i < resultBooks.length; i++) {
             if (resultBooks[i].premium == 1) {
                 resultBooks.splice(i, 1);
@@ -34,30 +33,6 @@ app.get('/api/getbooks', async (req, res) => {
         }
     }
 
-    let currentBookQuery = `SELECT currentBook as selected FROM user
-    WHERE user_id = ${mysql.escape(user.id)}`
-    let currentBook = await connection.asyncquery(currentBookQuery);
-    
-    if (currentBook[0].selected == 0) {
-        resultBooks.splice(0, 0, 
-            {
-                book_id: 0,
-                book_cover: "english.png",
-                progress: 0,
-                selected: 0
-            }
-        )
-    } else {
-        resultBooks.splice(1, 0, 
-            {
-                book_id: 0,
-                book_cover: "english.png",
-                process: 0,
-                selected: null
-            }
-        )
-    }
-    
 
     res.send(resultBooks)
 });

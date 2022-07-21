@@ -1,0 +1,16 @@
+.tabContent {
+    .coursesTab {
+        display: none;
+        padding-top: 180px;
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+    }
+    &.courses {
+        .coursesTab {
+            display: block;
+        }
+    }
+}

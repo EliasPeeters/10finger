@@ -1,0 +1,61 @@
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+.piebackground {
+  --p:20;
+  --b:6px;
+  --c: blue;
+  --w:50px;
+  height: 50px;
+  width: 50px;
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 5px;
+  place-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+.piebackground.home {
+  --w:80px;
+  height: 80px;
+  width: 80px;
+  font-size: 16px;
+  position: absolute;
+  right: 50px;
+}
+
+.piebackground:before,
+.piebackground:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.piebackground:before {
+  inset: 0;
+  background: radial-gradient(farthest-side, rgba(0, 0, 0, 0.05) 98%, rgba(0, 0, 0, 0)) top/var(--b) var(--b) no-repeat, conic-gradient(rgba(0, 0, 0, 0.05) calc(var(--p) * 1%), rgba(0, 0, 0, 0) 0);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.piebackground:after {
+  inset: calc(50% - var(--b) / 2);
+  background: rgba(0, 0, 0, 0.05);
+  transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w) / 2));
+}
+
+.no-round:before {
+  background-size: 0 0, auto;
+}
+
+.no-round:after {
+  content: none;
+}
+
+/*# sourceMappingURL=piebackground.css.map */

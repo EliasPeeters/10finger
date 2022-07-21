@@ -1,0 +1,115 @@
+@import "var.scss";
+
+#sidebar {
+    #sidebarContent {
+        .currentSelection {
+            position: absolute;
+            left: 17px;
+            top: 36px;
+            min-width: 200px;
+            height: 70px;
+            
+            border-radius: 10px;
+            margin-left: 2.5%;
+            justify-content: center;
+
+
+            .selectedTag {
+                position: absolute;
+                top: -5px;
+                left: 78px;
+                color: gray;
+                font-size: 12px;
+            }
+
+            .selected {
+                box-shadow: $shadowSoft;
+                display: flex;
+                justify-content: start;
+                border-radius: 10px;
+
+                img {
+                    height: 60px;
+                    margin-top: 5px;
+                    margin-left: 20px;
+                }
+
+                .name {
+                    font-weight: bold;
+                    font-size: 22px;
+                    margin-left: 10px;
+                    margin-top: 25px;
+                }
+
+                .author {
+                    margin-left: 10px;
+                    margin-top: 31px;
+                    font-size: 14px;
+                    color: gray;
+                    margin-right: 20px;
+
+                }
+            }
+            
+        }
+
+        #textSelector {
+
+            .tabSelector {
+                overflow: hidden;
+                margin-top: 60px;
+                width: 60%;
+                margin-left: 20%;
+                display: flex;
+                justify-content: space-between;
+
+                .tabItem {
+                    padding: 5px 20px;
+                    text-align: center;
+                    color: $darkOne;
+                    width: 120px;
+                    // background-color: $darkOne;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    border: 2px solid $darkOne;
+                }
+            }
+
+            .books {
+                &.tabSelector {
+                    .books {
+                        color: white;
+                        background-color: $darkOne;
+                    }
+                }
+            }
+
+            .generale {
+                &.tabSelector {
+                    .generale {
+                        color: white;
+                        background-color: $darkOne;
+                    }
+                }
+            }
+
+            .courses {
+                &.tabSelector {
+                    .courses {
+                        color: white;
+                        background-color: $darkOne;
+                    }
+                }
+            }
+
+            .tabContent {
+                margin-top: -50px;
+                width: 95%;
+                height: 570px;
+                box-shadow: $shadowSoft;
+                border-radius: 10px;
+                margin-left: 2.5%;
+            }
+        }
+    }
+}

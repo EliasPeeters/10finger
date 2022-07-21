@@ -1,0 +1,76 @@
+<h1>Profile</h1>
+
+<%- include ("partials/closeButton") %>
+
+<% function generateTimeString(minutes_input) {
+    hours = Math.trunc(minutes_input / 60)
+    minutes = Math.trunc((minutes_input - hours * 60))
+    seconds = Math.round((minutes_input - hours * 60 - minutes) * 60) 
+    
+    hours = hours < 10?'0' + hours: hours
+    minutes = minutes < 10?'0' + minutes: minutes
+    seconds = seconds < 10?'0' + seconds: seconds
+
+    return hours + ':' + minutes + ':' + seconds
+} %>
+
+<div id="profile">
+    <h3>All time stats</h3>
+
+    <div class="statsWrapper">
+        <div class="stat">
+            <p class="data"><%= (Math.round(averageAll.wpm * 100) / 100 ) %> wpm</p>
+            <p class="caption">Average Speed</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  Math.round(averageAll.accuracy * 10000) / 100 %> %</p>
+            <p class="caption">Average Accurarcy</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  (Math.round(bestAll.wpm * 100) / 100 ) %> wpm</p>
+            <p class="caption">All time best</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  averageAll.amount %> </p>
+            <p class="caption">Total Lessons</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  generateTimeString(averageAll.duration) %> </p>
+            <p class="caption">Total Time</p>
+        </div>
+    </div>
+
+    <h3>Todays Stats</h3>
+
+    <div class="statsWrapper">
+        <div class="stat">
+            <p class="data"><%= (Math.round(averageToday.wpm * 100) / 100 ) %> wpm</p>
+            <p class="caption">Average Speed</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  Math.round(averageToday.accuracy * 10000) / 100 %> %</p>
+            <p class="caption">Average Accurarcy</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  (Math.round(bestToday.wpm * 100) / 100 ) %> wpm</p>
+            <p class="caption">All time best</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  averageToday.amount %> </p>
+            <p class="caption">Total Lessons</p>
+        </div>
+
+        <div class="stat">
+            <p class="data"><%=  generateTimeString(averageToday.duration) %> </p>
+            <p class="caption">Total Time</p>
+        </div>
+    </div>
+
+</div>

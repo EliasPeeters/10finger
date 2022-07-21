@@ -9,8 +9,6 @@ app.post('/api/finishedTest', async (req, res) => {
         res.send('401')
         return
     }
-    console.log('now')
-    console.log(req.body)
     
     const datetime = new Date().toJSON().slice(0, 19).replace('T', ' ')
 

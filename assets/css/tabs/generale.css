@@ -1,0 +1,66 @@
+.tabContent .generaleTab {
+  display: none;
+}
+.tabContent .generaleTab .generaleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  justify-content: space-between;
+  overflow-y: scroll;
+  padding-top: 90px;
+}
+.tabContent .generaleTab .generaleWrapper .text {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.tabContent .generaleTab .generaleWrapper .text.selected .textInfo {
+  border: 2px solid #006D77;
+}
+.tabContent .generaleTab .generaleWrapper .text .cover {
+  width: 105px;
+  height: 140px;
+  float: left;
+  margin-top: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  z-index: 3;
+}
+.tabContent .generaleTab .generaleWrapper .text .textInfo {
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  height: 200px;
+  margin-left: -20px;
+  padding-left: 20px;
+  z-index: 2;
+  border-radius: 10px;
+  position: relative;
+}
+.tabContent .generaleTab .generaleWrapper .text .textInfo .button {
+  width: 120px;
+  font-size: 12px;
+  height: 30px;
+  margin-left: 33px;
+  position: absolute;
+  bottom: 10px;
+}
+.tabContent .generaleTab .generaleWrapper .text .title {
+  text-align: center;
+  color: #006D77;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.tabContent .generaleTab .generaleWrapper .text .description {
+  padding-left: 10px;
+  padding-right: 15px;
+  text-align: justify;
+  font-size: 14px;
+}
+.tabContent.generale .generaleTab {
+  display: block;
+}
+
+/*# sourceMappingURL=generale.css.map */

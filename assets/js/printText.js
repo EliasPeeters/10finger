@@ -11,7 +11,7 @@ function printText(text) {
 
     for (let i = 0; i < text.length; i++) {
         insertText += `${(i == cursorPosition)?'<div class="cursor"></div>':''}`
-        insertText += `<div class="key ${text[i].correct} ${(text[i].done)?'done':''}">${text[i].key}</div>`
+        insertText += `<div class="key ${text[i].correct} ${(text[i].done)?'done':''}">${((text[i].key == ' ') && (text[i].correct == 'wrong'))?'_':text[i].key}</div>`
         
         if (text[i].key == ' ') {
             insertText += '</div><div class="word">'

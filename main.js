@@ -26,6 +26,12 @@ const finishedTestApi = require('./api/finishedTest')
 const lastTestApi = require('./api/getLastTest')
 const booksApi = require('./api/getBooks')
 const selectbookApi = require('./api/selectBook')
+const textSelectorApi = require('./api/getTextSelector');
+const profileApi = require('./api/getProfile')
+const settingsApi = require('./api/getSettings')
+const selectTextApi = require('./api/selectText')
+const getCurrentApi = require('./api/getCurrentApi')
+
 
 app.listen('3030', () => {
     console.log(`Running on 3030`)

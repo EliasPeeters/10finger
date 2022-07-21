@@ -15,11 +15,12 @@
   height: 400px;
   max-width: 800px;
   width: 95%;
-  background-color: #EDF6F9;
+  background-color: white;
   top: -450px;
   z-index: 11;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   transition: 200ms;
+  border-radius: 20px;
 }
 .overlay.bigoverlay {
   max-width: 1000px;
@@ -48,7 +49,7 @@
   margin-top: 70px;
 }
 .overlay .input {
-  background-color: #EDF6F9;
+  background-color: white;
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   width: 80%;
@@ -76,11 +77,11 @@
   box-shadow: 10px 10px 0 #83C5BE;
 }
 .overlay .stats.two {
-  border-color: #E29578;
+  border-color: #006D77;
   box-shadow: 10px 10px 0 #FFDDD2;
 }
 .overlay .stats.three {
-  background-color: #387800;
+  background-color: #006D77;
   box-shadow: 10px 10px 0 #8EC482;
 }
 .overlay .stats h3 {

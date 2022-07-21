@@ -1,0 +1,40 @@
+@import "var.scss";
+
+#sidebar {
+    #sidebarContent {
+        #profile {
+            overflow-y: scroll;
+            height: 500px;
+            h3 {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .statsWrapper {
+                display: flex;
+                justify-content: space-around;
+
+                .stat {
+                    box-shadow: $shadowSoft;
+                    border-radius: 10px;
+                    padding: 10px 5px;
+                    width: 147px;
+
+                    p {
+                        margin: 13px;
+                    }
+
+                    .data { 
+                        text-align: center;
+                    }
+
+                    .caption {
+                        text-align: center;
+                        font-size: 14px;
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<div class="generaleTab">
+    <div class="generaleWrapper">
+        <% for (text of texts) { %>
+            <div class="text <%= text.currentText != null? 'selected':'' %>">
+                <img class="cover" src="./assets/img/bookcover/<%= text.cover%>">
+
+                <div class="textInfo">
+                    <p class="title"><%= text.name %></p>
+                    <p class="description"><%= text.description %></p>
+
+                    <% if (text.currentText !== null) { %> 
+                        <button class="button one">Settings</button>
+                    <% } else { %>
+                        <button class="button one" onclick="selectText(<%= text.id %>)">Select</button>
+                    <% } %>
+                </div>
+
+            </div>  
+        <% } %>
+    </div>
+</div>
+

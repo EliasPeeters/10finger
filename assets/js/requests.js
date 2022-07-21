@@ -25,7 +25,6 @@ function getAverageData() {
     xmlHttp.open("get", '/api/averageData', false);
     xmlHttp.send();
     let result = JSON.parse(xmlHttp.responseText);
-    console.log(result)
 
     document.getElementById('accuarcy_avg_all').innerHTML = Math.round(result.averageAll.accuracy * 10000) / 100 +  ' %'
     document.getElementById('speed_avg_all').innerHTML = (Math.round(result.averageAll.wpm * 100) / 100 ) + ' wpm'
@@ -46,7 +45,6 @@ function loadLastTest() {
     xmlHttp.open("get", '/api/getlasttest', false);
     xmlHttp.send();
     let result = JSON.parse(xmlHttp.responseText);
-    console.log(result)
 
 
     document.getElementById('speed').innerHTML = Math.round(result.resultLastTest.wpm * 100) / 100 + ' wpm'

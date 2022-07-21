@@ -8,6 +8,7 @@ function restart() {
     text = getText()
     cursorPosition = 0
     printText(text)
+    getCurrent()
 }
 
 restart()

@@ -1,0 +1,13 @@
+.tabContent .coursesTab {
+  display: none;
+  padding-top: 180px;
+}
+.tabContent .coursesTab p {
+  text-align: center;
+  margin: 0;
+}
+.tabContent.courses .coursesTab {
+  display: block;
+}
+
+/*# sourceMappingURL=courses.css.map */

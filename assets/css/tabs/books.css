@@ -1,0 +1,91 @@
+.tabContent .bookTab {
+  display: none;
+  padding-top: 70px;
+}
+.tabContent .bookTab .bookWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  justify-content: space-between;
+  overflow-y: scroll;
+  height: 460px;
+}
+.tabContent .bookTab .bookWrapper .book {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.tabContent .bookTab .bookWrapper .book.selected .bookInfo {
+  border: 2px solid #006D77;
+}
+.tabContent .bookTab .bookWrapper .book .cover {
+  width: 105px;
+  height: 140px;
+  float: left;
+  margin-top: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  z-index: 3;
+}
+.tabContent .bookTab .bookWrapper .book .title {
+  text-align: center;
+  color: #006D77;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.tabContent .bookTab .bookWrapper .book .author {
+  margin-top: 0;
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo {
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  height: 200px;
+  margin-left: -20px;
+  padding-left: 20px;
+  z-index: 2;
+  border-radius: 10px;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .starWrapper {
+  margin-left: 30px;
+  overflow: hidden;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .starWrapper img {
+  width: 20px;
+  margin-left: 5px;
+  float: left;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .lines {
+  color: gray;
+  text-align: center;
+  margin-top: 4px;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .progress {
+  display: none;
+  margin-top: 20px;
+  width: 150px;
+  margin-left: 25px;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #006D77;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .buttonPieWrapper {
+  display: flex;
+  justify-content: center;
+}
+.tabContent .bookTab .bookWrapper .book .bookInfo .buttonPieWrapper .button {
+  width: 100px;
+  font-size: 12px;
+  height: 30px;
+  margin-top: 20px;
+}
+.tabContent.books .bookTab {
+  display: block;
+}
+
+/*# sourceMappingURL=books.css.map */

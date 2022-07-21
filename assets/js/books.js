@@ -41,8 +41,6 @@ function getBooks() {
     xmlHttp.send(null);
     let books = JSON.parse(xmlHttp.responseText);
 
-    console.log(books)
-
     let string = ''
     for (element of books) {
         string += createBookString(element)

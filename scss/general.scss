@@ -7,47 +7,117 @@
 body {
     background-color: $backgroundColor;
     display: flex;
-    flex-direction: column;
+    
     justify-content: center;
     align-items: center;
     
 
-    .mainBox {
-        border: 1px solid black;
-        max-width: 800px;
-        max-height: 200px;
-        width: calc(98% - 100px);
-        padding: 50px;
-        .stats {
-            p {
-                float: left;
-                margin-right: 10px;
+    #contentWrapper {
+        position: fixed;
+        // width: calc(100% - 290px);
+        width: 100%;
+        // flex-direction: column;
+        flex-wrap: wrap;
+        // margin-left: 290px;
+        display: flex;
+        justify-content: space-around;
+
+        @media screen and (max-width: 1540px) {
+            width: calc(100% - 290px);
+            justify-content: start;
+            margin-left: 350px;
+        }
+
+        .logo {
+            // position: absolute;
+            // top: 20px;
+            max-width: 800px;
+            width: calc(98%);
+            margin-bottom: 20px;
+            height: 140px;
+            background-image: url('/assets/img/logo2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .spacer {
+            max-width: 800px;
+            width: calc(98%);
+            margin-bottom: 20px;
+            height: 140px;
+        }
+
+        .mainBox {
+            max-width: 800px;
+            max-height: 200px;
+            width: calc(98% - 130px);
+            padding: 50px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            .stats {
+                p {
+                    float: left;
+                    margin-right: 10px;
+                }
+                
+                #speed {
+                    margin-right: 30px;
+                }
             }
-            
-            #speed {
-                margin-right: 30px;
+    
+            .message {
+                clear: both;
+                text-align: center;
+                color: $darkThree;
+                display: none;
+    
+                &.show {
+                    display: block;
+                }
             }
         }
 
-        .message {
-            clear: both;
-            text-align: center;
-            color: $darkThree;
-            display: none;
+        .homeBox {
+            padding: 20px 50px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            width: calc(98% - 130px);
+            height: 100px;
+            max-width: 800px;
+            margin-bottom: 20px;
+            display: flex;
+            position: relative;
 
-            &.show {
-                display: block;
+            .cover {
+                height: 100px;
+                border-radius: 10px;
+            }
+
+            .title {
+                font-size: 22px;
+                font-weight: bold;
+                margin: 10px;
+                margin-left: 30px;
+            }
+
+            .author {
+                color: gray;
+                margin: 10px;
+                margin-left: 30px;
             }
         }
     }
+    
 
     .buttonBox {
-        border: 1px solid black;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+        border-radius: 20px;
         width: calc(98% - 100px);
         max-width: 800px;
         height: 50px;
         padding: 50px;
-        margin-top: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -66,25 +136,28 @@ body {
     appearance:         none;
     border: none;
     font-size: 16px;
+    border-radius: 10px;
     
 
     &.one {
         background-color: $darkOne;
-        box-shadow: 5px 5px 0px $lightOne;   
+        // box-shadow: 5px 5px 0px $lightOne;   
     }
 
     &.two {
         background-color: $darkTwo;
-        box-shadow: 5px 5px 0px $lightTwo;   
+        // box-shadow: 5px 5px 0px $lightTwo;   
     }
 
     &.three {
         background-color: $darkThree;
-        box-shadow: 5px 5px 0px $lightThree;   
+        // box-shadow: 5px 5px 0px $lightThree;   
     }
 
     &:hover {
         cursor: pointer;
-        box-shadow: 0px 0px 0px;   
+        border: 2px solid $darkOne;
+        color: $darkOne;
+        background-color: $backgroundColor;
     }
 }

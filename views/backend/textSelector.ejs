@@ -1,0 +1,35 @@
+<h1>Text Selector</h1>
+
+<%- include ("partials/closeButton") %>
+
+<div class="currentSelection">
+        <div class="selected">
+            <p class="selectedTag">Currently selected</p>
+            <img src="./assets/img/bookcover/<%= current.cover %>">
+            <p class="name"><%= current.name %></p>
+            <p class="author"><%= current.author %></p>
+        </div>
+    </div>
+
+<div id="textSelector">
+    <!-- <div class="currentSelection">
+        <div class="selected">
+            <img src="./assets/img/bookcover/<%= current.cover %>">
+            <p class="name"><%= current.name %></p>
+            <p class="author"><%= current.author %></p>
+        </div>
+    </div> -->
+
+    <div class="tabSelector <%= tab %>">
+        <div class="tabItem generale" onclick="switchTab('generale')">Generale</div>
+        <div class="tabItem books" onclick="switchTab('books')">Books</div>
+        <div class="tabItem courses" onclick="switchTab('courses')">Courses</div>
+    </div>
+
+    <div class="tabContent <%= tab %>">
+        <%- include ("partials/tabs/books") %>
+        <%- include ("partials/tabs/generale") %>
+        <%- include ("partials/tabs/courses") %>
+    </div>
+</div>
+

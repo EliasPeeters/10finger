@@ -20,8 +20,9 @@
     background-color: $backgroundColor;
     top: -450px;
     z-index: 11;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: $shadow;
     transition: 200ms;
+    border-radius: 20px;
 
     
 
