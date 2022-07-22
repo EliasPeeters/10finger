@@ -140,4 +140,18 @@ body .buttonBox {
   right: 0;
 }
 
+.footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.footer p {
+  margin-bottom: 10px;
+}
+.footer a {
+  text-decoration: none;
+  color: #000;
+}
+
 /*# sourceMappingURL=general.css.map */

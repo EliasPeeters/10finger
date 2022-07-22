@@ -170,3 +170,19 @@ body {
     box-shadow: $shadow;
     right: 0;
 }
+
+.footer {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    p {
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+
+    }
+    
+}
