@@ -1,11 +1,9 @@
 <html>
     <head>
         
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3432018163010874"
-     crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="../assets/css/keys.css">
-        <link rel="stylesheet" href="../assets/css/general.css">
+        
         <link rel="stylesheet" href="../assets/css/overlay.css">
         <link rel="stylesheet" href="../assets/css/books.css">
         <link rel="stylesheet" href="../assets/css/sidebar.css">
@@ -21,7 +19,9 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <%- include ("partials/header") %>
 
         
     </head>
@@ -104,24 +104,9 @@
             <button class="button two" onclick="openRegister()">Register</button>
             <% } %> 
         </div> -->
-        <div class="adWrapperRight">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3432018163010874"
-                crossorigin="anonymous"></script>
-            <!-- RightSide -->
-            <ins class="adsbygoogle"
-                style="display:inline-block;width:250px;height:400px"
-                data-ad-client="ca-pub-3432018163010874"
-                data-ad-slot="9872452488"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <!-- <div class="adWrapperRight"></div> -->
 
-        </div>
-
-        <div class="footer">
-            <p>© 2022, Webseite erstellt und betrieben von Elias Peeters, Hamburger Straße 139, 25337 Elmshorn</p>
-            <a href="mailto:elias.peeters@icloud.com">elias.peeters@icloud.com</a>
-        </div>  
+        <%- include ("partials/footer") %>
         
 
         

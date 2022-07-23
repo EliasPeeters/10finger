@@ -1,0 +1,66 @@
+@import "var.scss";
+
+.pageWrapper {
+    margin-top: 50px;
+    max-width: 1000px;
+    min-width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: $shadow;
+    position: relative;
+
+    animation-name: showContent;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    a {
+        color: $darkOne;
+    }
+
+    .backButton {
+        position: absolute;
+        top: 51.4px;
+        right: 30px;
+    }
+}
+
+
+
+.footer {
+    width: auto !important;
+    position: relative !important;
+
+    box-shadow: $shadow;
+    bottom: 15px;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    p {
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+
+    }
+}
+
+@keyframes showContent {
+    0% {
+        margin-top: 100%;
+    }
+    100% {
+        margin-top: 50px;
+    }
+}
+
+@keyframes hideContent {
+    0% {
+        margin-top: 50px;
+    }
+    100% {
+        margin-top: 100%;
+    }
+}

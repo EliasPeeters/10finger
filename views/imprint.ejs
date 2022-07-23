@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <%- include ("partials/header") %>
+
+        <link rel="stylesheet" href="../assets/css/otherPages.css">
+    </head>
+    
+<body>
+    <div>
+        <script>
+            function back() {
+                document.getElementsByClassName('pageWrapper')[0].style.animationName = 'hideContent'
+                setTimeout(function() { 
+                    window.location.href = '/'
+                }, 150);
+            }
+        </script>
+        <div class="pageWrapper">
+            <button class="button one backButton" onclick="back()">
+                Back
+            </button>
+            <h1>Imprint</h1>
+            <p>Elias Peeters</p>
+            <p>Hamburger Straße 139</p>
+            <p>25337 Elmshorn</p>
+
+            <p>Tel: +49 (0) 172 3445175</p>
+            <p>elias.peeters@icloud.com</p>
+        </div>
+            
+    
+        <%- include ("partials/footer") %>
+    </div>
+    
+</body>
+</html>
+

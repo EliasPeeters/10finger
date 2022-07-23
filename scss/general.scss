@@ -176,13 +176,20 @@ body {
     bottom: 15px;
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+
     p {
-        margin-bottom: 10px;
+        margin: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     a {
         text-decoration: none;
         color: #000;
+        margin: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
 
     }
-    
 }

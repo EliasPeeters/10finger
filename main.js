@@ -19,6 +19,8 @@ const homeRoute = require('./routes/home')
 const loginRoute = require('./routes/login')
 const registerRoute = require('./routes/register')
 const logoutRoute = require('./routes/logout')
+const datenschutzRoute = require('./routes/datenschutz')
+const imprintRoute = require('./routes/imprint')
 
 const generateTextApi = require('./api/generateText')
 const averageApi = require('./api/getAverageData')
