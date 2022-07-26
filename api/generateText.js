@@ -33,9 +33,8 @@ app.get('/api/generateText', async (req, res) => {
     }
 
     // get book id
-    let currentSentenceQuery = `SELECT sentence, book_id from progress_books where book_id = (SELECT currentBook from user WHERE user_id = ${mysql.escape(user.id)});`
+    let currentSentenceQuery = `SELECT sentence, book_id from progress_books where book_id = (SELECT currentBook from user WHERE user_id = ${mysql.escape(user.id)}) AND user_id = ${mysql.escape(user.id)}`
     let currentSentence = await connection.asyncquery(currentSentenceQuery)
-    
 
     // check for book == 
     if (currentSentence.length == 0) {

@@ -21,18 +21,18 @@ app.post('/api/selectBook', async (req, res) => {
 
     // check for progress
 
-    let progressCheckQuery = `SELECT * FROM progress_books WHERE user_id = ${mysql.escape(user.id)} AND book_id = ${mysql.escape(req.body.id)}` 
+    let progressCheckQuery = `SELECT * FROM progress_books WHERE user_id = ${mysql.escape(user.id)} AND book_id = ${mysql.escape(req.body.bookID)}` 
     let progressCheck = await connection.asyncquery(progressCheckQuery)
+
 
     if (progressCheck.length == 0) {
         // set progress
         let queryProgress = connection.createQueryStringFromObject({
             table: 'progress_books',
             user_id: user.id,
-            book_id: req.body.id,
+            book_id: req.body.bookID,
             sentence: 0
         });
-
         await connection.asyncquery(queryProgress)
     }
     

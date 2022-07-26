@@ -56,7 +56,7 @@ function selectBook(id) {
     xmlHttp.open("post", '/api/selectBook', false);
     xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlHttp.send(JSON.stringify({
-        id
+        id: id
     }));
     let text = xmlHttp.responseText;
     getBooks();

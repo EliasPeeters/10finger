@@ -62,16 +62,19 @@
                 margin-left: 20%;
                 display: flex;
                 justify-content: space-between;
+                z-index: 5;
 
                 .tabItem {
                     padding: 5px 20px;
                     text-align: center;
                     color: $darkOne;
                     width: 120px;
-                    // background-color: $darkOne;
+                    background-color: $backgroundColor;
                     border-radius: 10px;
                     cursor: pointer;
                     border: 2px solid $darkOne;
+                    z-index: 5;
+                    
                 }
             }
 
@@ -105,7 +108,7 @@
             .tabContent {
                 margin-top: -50px;
                 width: 95%;
-                height: 570px;
+                height: calc(100% - 125px);
                 box-shadow: $shadowSoft;
                 border-radius: 10px;
                 margin-left: 2.5%;

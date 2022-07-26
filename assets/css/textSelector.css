@@ -46,15 +46,18 @@
   margin-left: 20%;
   display: flex;
   justify-content: space-between;
+  z-index: 5;
 }
 #sidebar #sidebarContent #textSelector .tabSelector .tabItem {
   padding: 5px 20px;
   text-align: center;
   color: #006D77;
   width: 120px;
+  background-color: white;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid #006D77;
+  z-index: 5;
 }
 #sidebar #sidebarContent #textSelector .books.tabSelector .books {
   color: white;
@@ -71,7 +74,7 @@
 #sidebar #sidebarContent #textSelector .tabContent {
   margin-top: -50px;
   width: 95%;
-  height: 570px;
+  height: calc(100% - 125px);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   margin-left: 2.5%;

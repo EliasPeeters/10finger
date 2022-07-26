@@ -13,6 +13,7 @@
             justify-content: space-between;
             overflow-y: scroll;
             height: 460px;
+            height: calc(100% - 110px);
 
             .book {
                 width: 300px;
