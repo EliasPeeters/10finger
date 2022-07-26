@@ -40,7 +40,6 @@ body #contentWrapper .spacer {
 }
 body #contentWrapper .mainBox {
   max-width: 800px;
-  max-height: 200px;
   width: calc(98% - 130px);
   padding: 50px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -159,6 +158,25 @@ body .buttonBox {
   margin: 0px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#mobileBlocker {
+  position: fixed;
+  background-color: white;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 40px);
+  z-index: 100;
+  display: none;
+  padding: 20px;
+  padding-top: 100px;
+  text-align: center;
+}
+@media screen and (max-width: 700px) {
+  #mobileBlocker {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=general.css.map */
