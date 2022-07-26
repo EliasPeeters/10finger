@@ -24,6 +24,7 @@ function selectBook(bookID) {
     let text = xmlHttp.responseText;
     insertSidebarContent(getSidebarContent('TextSelector', 'books'))
     restart()
+    closeSiderbar()
 }
 
 function selectText(textID) {
@@ -36,6 +37,7 @@ function selectText(textID) {
     let text = xmlHttp.responseText;
     insertSidebarContent(getSidebarContent('TextSelector', 'generale'))
     restart()
+    closeSiderbar()
 }
 
 

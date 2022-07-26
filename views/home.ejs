@@ -38,59 +38,56 @@
         <%- include ("partials/profile") %>
         <%- include ("partials/settings") %>
 
-        <% if (data.loggedIn) { %>
-            <%- include ("partials/sidebar") %>
-        <% } %> 
         
-
-        
-
+        <%- include ("partials/sidebar") %>
 
         <div id="contentWrapper">
 
-            
-
-            <div class="logo"></div>
-            <!-- <img class="logo" src="/assets/img/logo.png"> -->
-
-            <!-- <div class="spacer"></div> -->
-            <div class="mainBox">
-                <div class="stats">
-                    <p>Speed:</p>
-                    <p id="speed">0 wpm</p>
-            
-                    <p>Accurarcy:</p>
-                    <p id="accuarcy">0 %</p>
+            <div id="contentWrapperCenter">
+                <div class="logo"></div>
+                <!-- <img class="logo" src="/assets/img/logo.png"> -->
+    
+                <!-- <div class="spacer"></div> -->
+                <div class="mainBox">
+                    <div class="stats">
+                        <p>Speed:</p>
+                        <p id="speed">0 wpm</p>
+                
+                        <p>Accurarcy:</p>
+                        <p id="accuarcy">0 %</p>
+                    </div>
+        
+                    <p class="message" id="message">You did the complete book!</p>
+                    <div id="wordsBox">
+                        <!-- <div class="key">T</div>
+                        <div class="key">h</div> -->
+                    </div>
                 </div>
     
-                <p class="message" id="message">You did the complete book!</p>
-                <div id="wordsBox">
-                    <!-- <div class="key">T</div>
-                    <div class="key">h</div> -->
-                </div>
+                
+    
+                <% if (!data.loggedIn) { %>
+
+                    
+                <% } else { %> 
+                    <div class="homeBox" id="homeCurrent"> 
+    
+                        <img class="cover" src="/assets/img/bookcover/produktManagementNew.png">
+                        <div>
+                            <p class="title">The Product Book</p>
+                            <p class="author">Product School</p>
+                        </div>
+    
+                        <div class="piebackground home" style="--p:100"> 32 %</div>
+    
+                        <div class="pie home" style="--p:32"> </div>    
+                    </div>
+                <% } %> 
             </div>
 
             
 
-            <% if (!data.loggedIn) { %>
-                <div class="buttonBox"> 
-                    <button class="button one" onclick="openLogin()">Login</button>
-                    <button class="button two" onclick="openRegister()">Register</button>
-                </div>
-            <% } else { %> 
-                <div class="homeBox" id="homeCurrent"> 
-
-                    <img class="cover" src="/assets/img/bookcover/produktManagementNew.png">
-                    <div>
-                        <p class="title">The Product Book</p>
-                        <p class="author">Product School</p>
-                    </div>
-
-                    <div class="piebackground home" style="--p:100"> 32 %</div>
-
-                    <div class="pie home" style="--p:32"> </div>    
-                </div>
-            <% } %> 
+            
         </div>
         
 

@@ -1,13 +1,13 @@
 @import "var.scss";
 
-#blackBox {
+#blackBoxOverlay {
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,0);
     position: fixed;
-    z-index: 10;
+    z-index: 15;
     transition: 400ms;
     display: none;
 }
@@ -19,7 +19,7 @@
     width: 95%;
     background-color: $backgroundColor;
     top: -450px;
-    z-index: 11;
+    z-index: 16;
     box-shadow: $shadow;
     transition: 200ms;
     border-radius: 20px;

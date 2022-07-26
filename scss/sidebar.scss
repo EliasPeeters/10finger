@@ -1,5 +1,17 @@
 @import "var.scss";
 
+#blackBox {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    z-index: 10;
+    transition: 400ms;
+    display: none;
+}
+
 #sidebar {
     position: fixed;
     background-color: white;
@@ -12,6 +24,10 @@
     transition: 300ms;
     height: 373px;
     z-index: 10;
+
+    &.sidebarSmall {
+        height: 183px;
+    }
     
     &.sidebarOpen {
         

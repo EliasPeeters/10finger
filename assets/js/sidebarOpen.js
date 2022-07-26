@@ -2,6 +2,20 @@ let sidebar = document.getElementById("sidebar")
 let sidebarContent = document.getElementById("sidebarContent");
 let sidebarButtons = document.getElementsByClassName('sidebarButton')
 
+function showBlackBox() {
+    document.getElementById('blackBox').style.display = 'block'
+    document.getElementById('blackBox').style.backgroundColor = 'rgba(0,0,0,0.4)'
+}
+
+function hideBlackBox() {
+    document.getElementById('blackBox').style.backgroundColor = 'rgba(0,0,0,0)'
+
+    setTimeout(function() { 
+        document.getElementById('blackBox').style.display = 'none'
+    }, 400);
+}
+
+
 function openSidebar(content) {
     showBlackBox();
     let contentHTML = getSidebarContent(content, 'books');

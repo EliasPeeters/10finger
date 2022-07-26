@@ -7,8 +7,8 @@ credentials = credentialsLoader.getCredentials();
 connection = mysqlSetup.getConnection();
 
 let start = 0;
-let name = 'tpb.txt'
-let id = 1
+let name = 'konzentration.txt'
+let id = 6
 
 setTimeout(async function() { 
     let data = fs.readFileSync('./books/' + name, 'utf8');
