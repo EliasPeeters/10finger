@@ -12,7 +12,7 @@
                         <button class="button one" onclick="selectBookTextNotLoggedIn(<%= text.id %>, 'text')">Select</button>
                     <% } else { %>
                         <% if (text.currentText !== null) { %> 
-                            <button class="button one">Settings</button>
+                            <button class="button one" onclick="selectText(<%= text.id %>)">Continue</button>
                         <% } else { %>
                             <button class="button one" onclick="selectText(<%= text.id %>)">Select</button>
                         <% } %>

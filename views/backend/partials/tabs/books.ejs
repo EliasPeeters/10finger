@@ -30,7 +30,7 @@
                             
                             <% if (book.progress !== null) { %> 
                                 <% if (book.selected !== null) { %> 
-                                    <button class="button one">Settings</button>
+                                    <button class="button one" onclick="selectBook(<%= book.book_id %>)">Continue</button>
                                 <% } else { %>
                                     <% if (book.progress !== undefined) { %>
                                         

@@ -85,13 +85,12 @@ app.get('/api/generateText', async (req, res) => {
             LIMIT 1`
         let currentText = await connection.asyncquery(currentTextQuery);
 
-        res.send(generateText(currentText[0]))
+        res.send(generateText(currentText[0].id))
     
         return
     }
 
     let sentence = currentSentence[0].sentence
-    console.log(currentSentence[0])
 
     let stringObject = await getBookString(sentence, currentSentence[0].book_id)
 

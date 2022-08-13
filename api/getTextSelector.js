@@ -17,7 +17,6 @@ app.get('/api/getTextSelector', async (req, res) => {
         let tab;
         if (req.query.selectedType == 'text') {
             for (let i = 0; i < texts.length; i++) {
-                console.log(texts[i].id)
                 if (texts[i].id == req.query.selectedID) {
                     texts[i].currentText = req.query.selectedID
                     let item = texts[i]
@@ -29,7 +28,6 @@ app.get('/api/getTextSelector', async (req, res) => {
             tab = 'generale'
         } else {
             for (let i = 0; i < books.length; i++) {
-                console.log(books[i].id)
                 if (books[i].book_id == req.query.selectedID) {
                     books[i].selected = req.query.selectedID
                     let item = books[i]
@@ -56,8 +54,6 @@ app.get('/api/getTextSelector', async (req, res) => {
     } else if (current.type == 'book') {
         tab = 'books'
     }
-
-    console.log(books)
 
     res.render('backend/textSelector', {books, tab, current, texts, user})
 });
