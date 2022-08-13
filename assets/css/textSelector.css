@@ -1,8 +1,6 @@
-@media screen and (max-width: 950px) {
-  #overlayContent h1 {
-    font-size: 0;
-    padding-bottom: 43px;
-  }
+#overlayContent .textSelectorHeading {
+  font-size: 0;
+  padding-bottom: 43px;
 }
 #overlayContent .currentSelection {
   position: absolute;

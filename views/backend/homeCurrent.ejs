@@ -1,12 +1,8 @@
     <img class="cover" src="/assets/img/bookcover/<%= data.cover %>">
     <div>
         <p class="title"><%= data.name %></p>
-        <% if (data.author !== undefined) { %>
-            <p class="author"><%= data.author %></p>
-        <% } else {%>
-            <p class="author"><%= data.description %></p>
-        <% } %>
-        </div>
+        <p class="author"><%= data.author %><%= data.description %></p>
+    </div>
 
     <% if (data.progress !== undefined) { %>
     <div class="piebackground home" style="--p:100"><%= Math.ceil(data.progress * 1000) / 10 %> %</div>
