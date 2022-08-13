@@ -9,7 +9,7 @@ const basic = Gen('./texts/basic.txt');
 const coding = Gen('./texts/coding.txt');
 const politics = Gen('./texts/politics.txt');
 
-async function getNextSentence(user, book_id, sentence) {
+async function getNextSentence(book_id, sentence) {
     let query = `SELECT sentence FROM book_lines WHERE book_id = ${book_id} AND number = ${sentence}`
     let currentSentence = await connection.asyncquery(query)
 
@@ -20,15 +20,51 @@ async function getNextSentence(user, book_id, sentence) {
     }
 }
 
+function generateText(currentText) {
+    if (currentText == 3) {
+        return {sentence: politics.take(2), nextSentence: 0}
+    } else if (currentText == 2) {
+        return {sentence: coding.take(4), nextSentence: 0}
+    } else {
+        return {sentence: basic.take(2), nextSentence: 0}
+    }
+}
+
+async function getBookString(sentence, book_id) {
+    let string = ''
+    while (string.length < 100) {
+        let nextSentence = await getNextSentence(book_id, sentence)
+        if (nextSentence == 'error') {
+            break;
+        }
+        string += nextSentence + ' '
+        sentence++
+    }
+
+    string = string.slice(0, string.length - 1);
+    return {
+        sentence: string,
+        nextSentence: sentence
+    }
+}
+
 app.get('/api/generateText', async (req, res) => {
     // let text = txtgen.sentence();
     // res.send(text)
-
     let user = checkLogin.checkLogin(req);
 
     if (user === null)  {
         // if not logged in, send basic text
-        res.send({sentence: basic.take(2), nextSentence: 0})
+
+        if (req.query.selectedType == 'text') {
+            res.send(generateText(req.query.selectedID))
+        } else {
+            let sentenceObject = await getBookString(req.query.nextSentence, req.query.selectedID)
+            res.send({
+                sentence: sentenceObject.sentence, 
+                nextSentence: sentenceObject.nextSentence, 
+            })
+        }
         return
     }
 
@@ -49,35 +85,19 @@ app.get('/api/generateText', async (req, res) => {
             LIMIT 1`
         let currentText = await connection.asyncquery(currentTextQuery);
 
-        if (currentText[0].currentText == 3) {
-            res.send({sentence: politics.take(2), nextSentence: 0})
-        } else if (currentText[0].currentText == 2) {
-            res.send({sentence: coding.take(4), nextSentence: 0})
-        } else {
-            res.send({sentence: basic.take(2), nextSentence: 0})
-        }
-        
-        
+        res.send(generateText(currentText[0]))
+    
         return
     }
 
     let sentence = currentSentence[0].sentence
+    console.log(currentSentence[0])
 
-    let string = ''
-    while (string.length < 100) {
-        let nextSentence = await getNextSentence(user, currentSentence[0].book_id, sentence)
-        if (nextSentence == 'error') {
-            break;
-        }
-        string += nextSentence + ' '
-        sentence++
-    }
-
-    string = string.slice(0, string.length - 1)
+    let stringObject = await getBookString(sentence, currentSentence[0].book_id)
 
     res.send({
-        sentence: string, 
-        nextSentence: sentence, 
+        sentence: stringObject.sentence, 
+        nextSentence: stringObject.nextSentence, 
         book: currentSentence[0].book_id
     })
 });

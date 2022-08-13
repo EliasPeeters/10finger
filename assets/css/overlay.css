@@ -94,5 +94,28 @@
 .overlay .stats .statsBox_Wrapper .statsBox p {
   text-align: center;
 }
+.overlay#generalOverlay {
+  max-height: 700px;
+  height: 85%;
+  border-radius: 20px;
+  max-width: 1100px;
+  left: 50%;
+  top: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.overlay#generalOverlay.open {
+  top: 50%;
+}
+.overlay#generalOverlay .overlayCloseButton {
+  position: absolute;
+  top: 35px;
+  right: 45px;
+  width: 80px;
+}
+.overlay#generalOverlay h1 {
+  margin-top: 40px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=overlay.css.map */

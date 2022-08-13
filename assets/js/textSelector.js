@@ -22,9 +22,8 @@ function selectBook(bookID) {
         bookID
     }));
     let text = xmlHttp.responseText;
-    insertSidebarContent(getSidebarContent('TextSelector', 'books'))
     restart()
-    closeSiderbar()
+    closeOverlay()
 }
 
 function selectText(textID) {
@@ -35,13 +34,17 @@ function selectText(textID) {
         textID
     }));
     let text = xmlHttp.responseText;
-    insertSidebarContent(getSidebarContent('TextSelector', 'generale'))
     restart()
-    closeSiderbar()
+    closeOverlay()
 }
 
 
-
+function selectBookTextNotLoggedIn(id, type) {
+    selectedType = type;
+    selectedID = id;
+    restart();
+    closeOverlay();
+}
 
 
 

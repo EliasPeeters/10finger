@@ -8,15 +8,22 @@
                     <p class="title"><%= text.name %></p>
                     <p class="description"><%= text.description %></p>
 
-                    <% if (text.currentText !== null) { %> 
-                        <button class="button one">Settings</button>
+                    <% if (user == null) { %>
+                        <button class="button one" onclick="selectBookTextNotLoggedIn(<%= text.id %>, 'text')">Select</button>
                     <% } else { %>
-                        <button class="button one" onclick="selectText(<%= text.id %>)">Select</button>
+                        <% if (text.currentText !== null) { %> 
+                            <button class="button one">Settings</button>
+                        <% } else { %>
+                            <button class="button one" onclick="selectText(<%= text.id %>)">Select</button>
+                        <% } %>
                     <% } %>
                 </div>
-
-            </div>  
+            </div>
         <% } %>
+
+        <div class="emptyText"></div>
+        <div class="emptyText"></div>
     </div>
+    
 </div>
 

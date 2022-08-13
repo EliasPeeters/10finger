@@ -24,7 +24,7 @@ WHERE user.user_id = '${user.id}';`
     if (result[0].author !== null) {
         return {
             // book
-
+            type: 'book',
             author: result[0].author,
             name: result[0].book_name,
             cover: result[0].book_cover,
@@ -33,7 +33,7 @@ WHERE user.user_id = '${user.id}';`
     } else {
         return {
             // text 
-
+            type: 'text',
             author: '',
             name: result[0].name,
             cover: result[0].cover,
@@ -44,4 +44,26 @@ WHERE user.user_id = '${user.id}';`
     
 }
 
-module.exports = {getCurrent}
+async function getCurrentNotLoggedIn(selectedType, selectedID, currentSentence = 0) {
+    if (selectedType == 'text') {
+        //text
+        let result = await connection.asyncquery(`SELECT * FROM texts WHERE id = ${mysql.escape(selectedID)}`);
+        result.author = ''
+        return result[0]
+    } else {
+        // book
+        let result = await connection.asyncquery(`SELECT * FROM books
+        LEFT JOIN (SELECT count(*) as numberOfLines, book_lines.book_id From book_lines GROUP BY book_id) as progressQuery on progressQuery.book_id = books.book_id
+    WHERE books.book_id = ${mysql.escape(selectedID)}`);
+
+        return {
+            name: result[0].book_name,
+            cover: result[0].book_cover,
+            description: '',
+            author: result[0].author,
+            progress: currentSentence / result[0].numberOfLines
+        }
+    }
+}
+
+module.exports = {getCurrent, getCurrentNotLoggedIn}

@@ -12,153 +12,61 @@
     display: none;
 }
 
-#sidebar {
+#sidebarWrappers {
     position: fixed;
-    background-color: white;
     left: 0;
-    box-shadow: $shadow;
-    padding: 20px;
-    border-radius: 0 20px 20px 0;
-    max-width: 250px;
-    width: 95%;
-    transition: 300ms;
-    height: 373px;
-    z-index: 10;
+    z-index: 13;
 
-    &.sidebarSmall {
-        height: 183px;
-    }
+    .sidebar {
+        background-color: white;
+        box-shadow: $shadow;
+        padding: 20px;
+        border-radius: 0 20px 20px 0;
+        max-width: 250px;
+        width: 95%;
+        transition: 300ms;
+        z-index: 10;
+
+        @media screen and (max-width: 1080px) {
+            width: 75px;
+        }
     
-    &.sidebarOpen {
+        .sidebarButton {
+            clear: both;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            margin-left: 25px;
         
-        // max-width: 1100px;
-        max-height: 700px;
-        height: 80%;
+            &.hidden {
+                display: none;
+            }
 
-        border-radius: 20px;
+            @media screen and (max-width: 1080px) {
+                font-size: 0;
+                width: 60px;
+                margin-left: 10px;
 
-        max-width: 1100px;
-        animation-name: openSidbar;
+                img {
+                    display: block;
+                    margin-left: 10px;
+                }
+            }
 
-        // animation-delay: 0.5s;
-        // -webkit-animation-delay: 0.2s;
-
-        animation-duration: 0.1s;
-        animation-fill-mode: forwards;
-    }
-
-    .sidebarButton {
-        clear: both;
-        margin-bottom: 25px;
-        margin-top: 25px;
-        margin-left: 25px;
-    
-        &.hidden {
-            display: none;
-        }
-    }
-
-    #sidebarContent {
-        opacity: 0;   
-
-        h1 {
-            margin-top:  -40px;
-            text-align: center;
+            &:hover {
+                @media screen and (max-width: 1080px) {
+                    background-color: $darkOne;
+                    border: none;
+                }
+            }
         }
 
-        .siderbarCloseButton {
-            position: absolute;
-            top: 45px;
-            right: 45px;
-            width: 80px;
+        &.loginSidebar {
+            margin-top: 30px;
         }
-    } 
-}
 
-
-
-.sidebarOpen {
-    .sidebarButton {
-        animation-name: hideButton;
-        animation-duration: 0.1s;
-        animation-fill-mode: forwards;
-    }
-
-    #sidebarContent {
-        animation-name: showSidebarContent;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        -webkit-animation-delay: 0.1s;
-    }
-}
-
-.close {
-    .sidebarButton {
-        animation-name: showButton;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        // -webkit-animation-delay: 0s;
-    }
-
-    #sidebarContent {
-        animation-name: hideSidebarContent;
-        animation-duration: 0.2s;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes openSidbar {
-    0% {
-        transform: translateX(0%);
-        left: 0%;
-
-    }
-    100% {
-        transform: translateX(-50%);
-
-        left: 50%;
         
-    }
-}
-
-@keyframes hideButton {
-    0% {
-        opacity: 1;
-        display: block;
-    }
-    99% {
-        opacity: 0;
     
     }
-    100% {
-        opacity: 0;
-        display: none;
-    }
 }
 
-@keyframes showSidebarContent {
-    0% {
-        opacity: 0;   
-    }
-    100% {
-        opacity: 1;   
-    }
-}
 
-@keyframes showButton {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes hideSidebarContent {
-    0% {
-        opacity: 1;   
-    }
-    100% {
-        opacity: 0;   
-    }
-}

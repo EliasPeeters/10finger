@@ -21,6 +21,7 @@ const registerRoute = require('./routes/register')
 const logoutRoute = require('./routes/logout')
 const datenschutzRoute = require('./routes/datenschutz')
 const imprintRoute = require('./routes/imprint')
+const sitemapRoute = require('./routes/sitemap')
 
 const generateTextApi = require('./api/generateText')
 const averageApi = require('./api/getAverageData')
@@ -33,6 +34,7 @@ const profileApi = require('./api/getProfile')
 const settingsApi = require('./api/getSettings')
 const selectTextApi = require('./api/selectText')
 const getCurrentApi = require('./api/getCurrentApi')
+const getgetBenefits = require('./api/getBenefits')
 
 
 app.listen('3030', () => {

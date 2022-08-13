@@ -1,7 +1,19 @@
 let mysql = require('mysql');
 
 async function getBooks(user) {
-    let queryBooks = `SELECT numberOfLines, author, stars, book_name as name, premium, books.book_id as book_id, book_cover, sentence/numberOfLines * 100 as progress, selected
+
+    let queryBooks;
+    
+    if (user == undefined) {
+        queryBooks = `SELECT author, stars, book_name as name, books.book_id as book_id, book_cover, numberOfLines FROM books
+            LEFT JOIN (SELECT count(*) as numberOfLines, book_id from book_lines GROUP BY book_id) as linesQuery
+            on linesQuery.book_id = books.book_id
+        WHERE premium = 0;`
+
+        return await connection.asyncquery(queryBooks)
+    } 
+
+    queryBooks = `SELECT numberOfLines, author, stars, book_name as name, premium, books.book_id as book_id, book_cover, sentence/numberOfLines * 100 as progress, selected
     from books
         LEFT JOIN (SELECT count(*) as numberOfLines, book_id
             from book_lines

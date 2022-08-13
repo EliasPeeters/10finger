@@ -1,7 +1,6 @@
 @import "var.scss";
 
-#sidebar {
-    #sidebarContent {
+    #overlayContent {
         #profile {
             overflow-y: scroll;
             height: 500px;
@@ -37,4 +36,3 @@
             }
         }
     }
-}

@@ -22,22 +22,38 @@
 
                     <div class="buttonPieWrapper">
                         
-
-                        <% if (book.progress !== null) { %> 
-                            <% if (book.selected !== null) { %> 
-                                <button class="button one">Settings</button>
-                            <% } else { %>
-                                <button class="button one" onclick="selectBook(<%= book.book_id %>)">Select</button>
-                            <% } %>
-
-                            <div class="piebackground" style="--p:100"> <%= Math.round(book.progress * 10) / 10 %> %</div>
-
-                            <div class="pie" style="--p:<%= Math.round(book.progress * 10) / 10 %>"> </div>
-    
+                        <% if (book.progress === undefined) { %>
+                            <!-- not logged in part -->
+                            <button class="button one" onclick="selectBookTextNotLoggedIn(<%= book.book_id %>, 'book')">Select</button>
                         <% } else { %>
-                            <button class="button one" onclick="selectBook(<%= book.book_id %>)">Start</button>
+                            <!-- if logged in -->
+                            
+                            <% if (book.progress !== null) { %> 
+                                <% if (book.selected !== null) { %> 
+                                    <button class="button one">Settings</button>
+                                <% } else { %>
+                                    <% if (book.progress !== undefined) { %>
+                                        
+                                        <button class="button one" onclick="selectBook(<%= book.book_id %>)">Select</button>
+                                    <% } else { %>
+                                        
+                                        
+                                    <% } %>
+                                <% } %>
+
+                                
+                                <% if (book.progress !== undefined) { %>
+                                    <div class="piebackground" style="--p:100"> <%= Math.round(book.progress * 10) / 10 %> %</div>
+
+                                    <div class="pie" style="--p:<%= Math.round(book.progress * 10) / 10 %>"> </div>
+                                <% } %>
+
+                                
+        
+                            <% } else { %>
+                                <button class="button one" onclick="selectBook(<%= book.book_id %>)">Start</button>
+                            <% } %>
                         <% } %>
-                        
                     </div>
                     
                 </div>
@@ -45,6 +61,9 @@
             </div>
             
         <% } %>
+
+        <div class="emptyBook"></div>
+        <div class="emptyBook"></div>
     </div>
     
 </div>

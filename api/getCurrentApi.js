@@ -6,13 +6,16 @@ app.get('/api/getcurrent', async (req, res) => {
 
     let user = checkLogin.checkLogin(req);
 
+    // check if not logged in
     if (user === null)  {
-        res.send('401')
+        let current = await getCurrent.getCurrentNotLoggedIn(req.query.selectedType, req.query.selectedID, req.query.currentSentence);
+        console.log(current)
+        console.log(req.query)
+        res.render('backend/homeCurrent',{data: current})
         return
     }
 
     let current = await getCurrent.getCurrent(user)
-    console.log(current)
 
     res.render('backend/homeCurrent',{data: current})
 });

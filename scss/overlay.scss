@@ -13,6 +13,7 @@
 }
 
 .overlay {
+    
     position: fixed;
     height: 400px;
     max-width: 800px;
@@ -23,6 +24,8 @@
     box-shadow: $shadow;
     transition: 200ms;
     border-radius: 20px;
+
+    
 
     
 
@@ -118,4 +121,37 @@
         }
         
     }
+
+    &#generalOverlay {
+        max-height: 700px;
+        height: 85%;
+
+        border-radius: 20px;
+
+        max-width: 1100px;
+
+        left: 50%;
+        top: -50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        &.open {
+            top: 50%;
+            
+        }
+
+        .overlayCloseButton {
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            width: 80px;
+        }
+
+        h1 {
+            margin-top:  40px;
+            text-align: center;
+        }
+    }
 }
+
+

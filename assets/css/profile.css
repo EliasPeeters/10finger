@@ -1,28 +1,28 @@
-#sidebar #sidebarContent #profile {
+#overlayContent #profile {
   overflow-y: scroll;
   height: 500px;
 }
-#sidebar #sidebarContent #profile h3 {
+#overlayContent #profile h3 {
   text-align: center;
   margin-top: 30px;
 }
-#sidebar #sidebarContent #profile .statsWrapper {
+#overlayContent #profile .statsWrapper {
   display: flex;
   justify-content: space-around;
 }
-#sidebar #sidebarContent #profile .statsWrapper .stat {
+#overlayContent #profile .statsWrapper .stat {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 10px 5px;
   width: 147px;
 }
-#sidebar #sidebarContent #profile .statsWrapper .stat p {
+#overlayContent #profile .statsWrapper .stat p {
   margin: 13px;
 }
-#sidebar #sidebarContent #profile .statsWrapper .stat .data {
+#overlayContent #profile .statsWrapper .stat .data {
   text-align: center;
 }
-#sidebar #sidebarContent #profile .statsWrapper .stat .caption {
+#overlayContent #profile .statsWrapper .stat .caption {
   text-align: center;
   font-size: 14px;
   color: gray;

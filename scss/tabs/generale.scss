@@ -8,7 +8,7 @@
             display: flex;
             flex-wrap: wrap;
             padding: 20px 30px;
-            justify-content: space-between;
+            justify-content: space-around;
             overflow-y: scroll;
             padding-top: 90px;
             height: calc(100% - 110px);
@@ -18,7 +18,7 @@
                 height: 200px;
                 border-radius: 10px;
                 display: flex;
-                margin-bottom: 30px;
+                margin: 30px 10px;
 
                 &.selected {
                     .textInfo {
@@ -72,6 +72,14 @@
                 }
 
                 
+            }
+
+            .emptyText {
+                width: 300px;
+                height: 1px;
+                border-radius: 10px;
+                display: flex;
+                margin: 30px 10px;
             }
         }
     }

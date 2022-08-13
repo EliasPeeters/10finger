@@ -14,12 +14,25 @@ body #contentWrapper {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
+  transition: 0ms;
 }
-@media screen and (max-width: 1540px) {
+@media (min-width: 1080px) and (max-width: 1540px) {
   body #contentWrapper {
     width: calc(100% - 290px);
     justify-content: start;
     margin-left: 350px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  body #contentWrapper {
+    width: calc(100% - 130px);
+    justify-content: start;
+    margin-left: 165px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  body #contentWrapper {
+    transition: 300ms;
   }
 }
 body #contentWrapper .logo {
@@ -58,9 +71,12 @@ body #contentWrapper .mainBox .message {
   text-align: center;
   color: #006D77;
   display: none;
+  width: 205px;
+  margin: 20px 190px;
+  margin-right: 230px;
 }
 body #contentWrapper .mainBox .message.show {
-  display: block;
+  display: inline-table;
 }
 body #contentWrapper .homeBox {
   padding: 20px 50px;
@@ -128,6 +144,10 @@ body .buttonBox {
   border: 2px solid #006D77;
   color: #006D77;
   background-color: white;
+}
+.button img {
+  height: 30px;
+  display: none;
 }
 
 .adWrapperRight {

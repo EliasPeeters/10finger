@@ -21,11 +21,22 @@ body {
         // margin-left: 290px;
         display: flex;
         justify-content: space-around;
+        transition: 0ms;
 
-        @media screen and (max-width: 1540px) {
+        @media (min-width: 1080px) and (max-width: 1540px) {
             width: calc(100% - 290px);
             justify-content: start;
             margin-left: 350px;
+        }
+
+        @media screen and (max-width: 1080px) {
+            width: calc(100% - 130px);
+            justify-content: start;
+            margin-left: 165px;
+        }
+
+        @media screen and (max-width: 1180px) {
+            transition: 300ms;
         }
 
         .logo {
@@ -71,9 +82,13 @@ body {
                 text-align: center;
                 color: $darkThree;
                 display: none;
-    
+                // margin: 16px 200px;
+                width: 205px;
+                margin: 20px 190px;
+                margin-right: 230px;
+                
                 &.show {
-                    display: block;
+                    display: inline-table;
                 }
             }
         }
@@ -158,6 +173,11 @@ body {
         border: 2px solid $darkOne;
         color: $darkOne;
         background-color: $backgroundColor;
+    }
+
+    img {
+        height: 30px;
+        display: none;
     }
 }
 

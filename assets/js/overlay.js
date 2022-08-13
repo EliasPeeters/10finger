@@ -31,3 +31,19 @@ function closeRegister() {
     hideBlackBoxOverlay();
     document.getElementById('register').classList.remove('open');
 }
+
+
+function openOverlay(content) {
+    let contentHTML = getSidebarContent(content, 'generale')
+    document.getElementById('overlayContent').innerHTML = contentHTML
+    showBlackBoxOverlay();
+    document.getElementById('generalOverlay').classList.add('open');
+}
+
+function closeOverlay(keepBlackBox = false) {
+    if (!keepBlackBox) {
+        hideBlackBoxOverlay();
+    }
+    
+    document.getElementById('generalOverlay').classList.remove('open');
+}

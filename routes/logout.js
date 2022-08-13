@@ -4,7 +4,7 @@ app.get('/logout', (req, res) => {
     let user = checkLogin.checkLogin(req);
 
     if (user === null)  {
-        res.send('401')
+        res.redirect('/')
         return
     } 
 

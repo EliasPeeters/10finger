@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px 30px;
-  justify-content: space-between;
+  justify-content: space-around;
   overflow-y: scroll;
   height: 460px;
   height: calc(100% - 110px);
@@ -16,7 +16,7 @@
   height: 200px;
   border-radius: 10px;
   display: flex;
-  margin-bottom: 30px;
+  margin: 30px 10px;
 }
 .tabContent .bookTab .bookWrapper .book.selected .bookInfo {
   border: 2px solid #006D77;
@@ -84,6 +84,10 @@
   font-size: 12px;
   height: 30px;
   margin-top: 20px;
+}
+.tabContent .bookTab .bookWrapper .emptyBook {
+  width: 300px;
+  height: 1px;
 }
 .tabContent.books .bookTab {
   display: block;

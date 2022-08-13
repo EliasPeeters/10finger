@@ -1,18 +1,37 @@
 
-<div id="sidebar" class="<% if (!data.loggedIn) { %>sidebarSmall<% } %>">
+<div id="sidebarWrappers">
+    <div class="sidebar">
     
+        <% if (!data.loggedIn) { %>
+            <button class="button one sidebarButton" onclick="openOverlay('benefits')">Profile<img src="/assets/img/icons/profile.png"></button><br>
+        <% } else { %> 
+            <button class="button one sidebarButton" onclick="openOverlay('profile')">Profile<img src="/assets/img/icons/profile.png"></button><br>
+        <% } %>
 
-    <% if (!data.loggedIn) { %>
-        <button class="button one sidebarButton" onclick="openLogin()">Login</button>
-        <button class="button two sidebarButton" onclick="openRegister()">Register</button>
-    <% } else { %>
-        <button class="button one sidebarButton" onclick="openSidebar('profile')">Profile</button><br>
-        <button class="button two sidebarButton" onclick="openSidebar('textSelector')">Text Selector</button><br>
-        <button class="button three sidebarButton" onclick="openSidebar('settings')">Settings</button><br>
-        <button class="button one sidebarButton" onclick="window.location = '/logout'">Logout</button>
-    <% } %> 
-    <div id="sidebarContent">
-        
+        <button class="button one sidebarButton" onclick="openOverlay('textSelector')">Text Selector<img src="/assets/img/icons/text.png"></button><br>
+
+        <% if (!data.loggedIn) { %>
+            <button class="button one sidebarButton" onclick="openOverlay('benefits')">Settings<img src="/assets/img/icons/settings.png"></button><br>
+        <% } else { %> 
+            <button class="button one sidebarButton" onclick="openOverlay('settings')">Settings<img src="/assets/img/icons/settings.png"></button><br>
+        <% } %>
+
+    </div>
+
+    <div class="sidebar loginSidebar">
+        <% if (!data.loggedIn) { %>
+            <button class="button two sidebarButton" onclick="openLogin()">Login<img src="/assets/img/icons/login.png"></button>
+            <br>
+            <button class="button two sidebarButton" onclick="openRegister()">Register<img src="/assets/img/icons/logout.png"></button>
+        <% } else { %>
+            <button class="button two sidebarButton" onclick="window.location = '/logout'">Logout<img src="/assets/img/icons/logout.png"></button>
+        <% } %> 
     </div>
 </div>
+
+
+<!-- <div id="sidebar">
+    <button class="button one sidebarButton" onclick="openLogin()">Login</button>
+    <button class="button two sidebarButton" onclick="openRegister()">Register</button>
+</div> -->
 

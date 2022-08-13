@@ -49,7 +49,7 @@ function closeSiderbar() {
 
 function getSidebarContent(content, tab) {
     let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("get", `/api/get${content}?tab=${tab}`, false);
+    xmlHttp.open("get", `/api/get${content}?tab=${tab}&selectedType=${selectedType}&selectedID=${selectedID}`, false);
     xmlHttp.send(null);
     return xmlHttp.responseText;
 }

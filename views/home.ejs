@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../assets/css/overlay.css">
         <link rel="stylesheet" href="../assets/css/books.css">
         <link rel="stylesheet" href="../assets/css/sidebar.css">
+        <link rel="stylesheet" href="../assets/css/benefits.css">
         
         <link rel="stylesheet" href="../assets/css/textSelector.css">
         <link rel="stylesheet" href="../assets/css/profile.css">
@@ -36,6 +37,7 @@
         <%- include ("partials/login") %>
         <%- include ("partials/register") %>
         <%- include ("partials/profile") %>
+        <%- include ("partials/overlayGeneral") %>
         <%- include ("partials/settings") %>
         <%- include ("partials/mobileBlocker") %>
 
@@ -66,24 +68,19 @@
                 </div>
     
                 
-    
-                <% if (!data.loggedIn) { %>
 
+                <div class="homeBox" id="homeCurrent"> 
 
-                <% } else { %> 
-                    <div class="homeBox" id="homeCurrent"> 
-    
-                        <img class="cover" src="/assets/img/bookcover/produktManagementNew.png">
-                        <div>
-                            <p class="title">The Product Book</p>
-                            <p class="author">Product School</p>
-                        </div>
-    
-                        <div class="piebackground home" style="--p:100"> 32 %</div>
-    
-                        <div class="pie home" style="--p:32"> </div>    
+                    <img class="cover" src="/assets/img/bookcover/produktManagementNew.png">
+                    <div>
+                        <p class="title">The Product Book</p>
+                        <p class="author">Product School</p>
                     </div>
-                <% } %> 
+
+                    <div class="piebackground home" style="--p:100"> 32 %</div>
+
+                    <div class="pie home" style="--p:32"> </div>    
+                </div>
             </div>
 
             
@@ -119,7 +116,6 @@
         <script src="../assets/js/printText.js"></script>
         <script src="../assets/js/calculate.js"></script>
         <script src="../assets/js/requests.js"></script>
-        <script src="../assets/js/books.js"></script>
         <script src="../assets/js/textSelector.js"></script>
         <script src="../assets/js/sidebarOpen.js"></script>
         <script src="../assets/js/getCurrent.js"></script>
@@ -127,6 +123,7 @@
         <script src="../assets/js/main.js"></script>
 
         <script src="../assets/js/overlay.js"></script>
+        <script src="../assets/js/benefitFunctions.js"></script>
 
 
     </body>
