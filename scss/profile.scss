@@ -34,5 +34,37 @@
                     }
                 }
             }
+
+            .chartWrapper {
+                height: 400px;
+                width: calc(100% - 60px);
+                display: flex;
+                padding: 30px;
+                padding-bottom: 50px;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                // background-color: red;
+
+                .oneChart {
+                    margin: 15px  5px;
+                    width: 400px;
+                    box-shadow: $shadow;
+                    border-radius: 10px;
+                    padding: 20px;
+                    height: 290px;
+
+                    h1 {
+                        margin: 20px 0;
+                    }
+
+                }
+
+                .emptyChart {
+                    margin: 15px  5px;
+                    width: 400px;
+                    padding: 20px;
+                    height: 1px;
+                }
+            }
         }
     }

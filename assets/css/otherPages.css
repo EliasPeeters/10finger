@@ -1,7 +1,11 @@
+body {
+  justify-content: space-between !important;
+  display: block;
+}
+
 .pageWrapper {
   margin-top: 50px;
   max-width: 1000px;
-  min-width: 400px;
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -9,14 +13,29 @@
   animation-name: showContent;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+  width: calc(100% - 60px);
 }
 .pageWrapper a {
   color: #006D77;
+  word-wrap: break-word;
+}
+.pageWrapper h1 {
+  word-wrap: break-word;
+}
+.pageWrapper h2 {
+  word-wrap: break-word;
 }
 .pageWrapper .backButton {
   position: absolute;
   top: 51.4px;
   right: 30px;
+}
+@media screen and (max-width: 650px) {
+  .pageWrapper {
+    padding-top: 100px;
+  }
 }
 
 .footer {

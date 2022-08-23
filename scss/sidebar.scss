@@ -17,6 +17,11 @@
     left: 0;
     z-index: 13;
 
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+
+
     .sidebar {
         background-color: white;
         box-shadow: $shadow;

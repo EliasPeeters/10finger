@@ -1,9 +1,13 @@
 @import "var.scss";
 
+body {
+    justify-content: space-between !important;
+    display: block;
+}
+
 .pageWrapper {
     margin-top: 50px;
     max-width: 1000px;
-    min-width: 400px;
     border-radius: 20px;
     padding: 30px;
     box-shadow: $shadow;
@@ -12,15 +16,33 @@
     animation-name: showContent;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+
+    width: calc(100% - 60px);
 
     a {
         color: $darkOne;
+        word-wrap: break-word;
+    }
+
+    h1 {
+        word-wrap: break-word;
+    }
+
+    h2 {
+        word-wrap: break-word;
     }
 
     .backButton {
         position: absolute;
         top: 51.4px;
         right: 30px;
+    }
+
+    @media screen and (max-width: 650px) {
+        padding-top: 100px;
     }
 }
 

@@ -35,6 +35,11 @@ body #contentWrapper {
     transition: 300ms;
   }
 }
+@media screen and (max-width: 700px) {
+  body #contentWrapper {
+    display: none;
+  }
+}
 body #contentWrapper .logo {
   max-width: 800px;
   width: 98%;
@@ -179,24 +184,9 @@ body .buttonBox {
   padding-left: 10px;
   padding-right: 10px;
 }
-
-#mobileBlocker {
-  position: fixed;
-  background-color: white;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: calc(100% - 40px);
-  z-index: 100;
-  display: none;
-  padding: 20px;
-  padding-top: 100px;
-  text-align: center;
-}
-@media screen and (max-width: 700px) {
-  #mobileBlocker {
-    display: block;
-  }
+.footer.mobile {
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 /*# sourceMappingURL=general.css.map */

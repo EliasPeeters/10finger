@@ -13,6 +13,7 @@ body {
     
 
     #contentWrapper {
+
         position: fixed;
         // width: calc(100% - 290px);
         width: 100%;
@@ -37,6 +38,10 @@ body {
 
         @media screen and (max-width: 1180px) {
             transition: 300ms;
+        }
+
+        @media screen and (max-width: 700px) {
+            display: none;
         }
 
         .logo {
@@ -211,24 +216,11 @@ body {
         padding-right: 10px;
 
     }
-}
 
-
-#mobileBlocker {
-    position: fixed;
-    background-color: $backgroundColor;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: calc(100% - 40px);
-    z-index: 100;
-
-    display: none;
-
-    @media screen and (max-width: 700px) {
-        display: block;
+    &.mobile {
+        margin-left: 50%;
+        transform: translate(-50%, 0%);
     }
-    padding: 20px;
-    padding-top: 100px;
-    text-align: center;
 }
+
+

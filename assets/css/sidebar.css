@@ -15,6 +15,11 @@
   left: 0;
   z-index: 13;
 }
+@media screen and (max-width: 700px) {
+  #sidebarWrappers {
+    display: none;
+  }
+}
 #sidebarWrappers .sidebar {
   background-color: white;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);

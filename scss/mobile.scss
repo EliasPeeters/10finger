@@ -1,0 +1,55 @@
+@import "var.scss";
+
+
+#MobileWrapper {
+    background-color: $backgroundColor;
+    left: 0;
+    top: 0;
+    width: calc(100% - 40px);
+    z-index: 100;
+    padding: 30px;
+
+    display: none;
+
+    @media screen and (max-width: 700px) {
+        display: block;
+    }
+    
+    padding: 20px;
+    padding-top: 100px;
+    text-align: center;
+
+
+    .mobileLogo {
+        width: 100%;
+    }
+
+    .mobileImageWrapper {
+        width: 100%;
+        box-shadow: $shadow;
+        border-radius: 20px;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+
+    h4 {
+        font-weight: normal;
+    }
+
+    .footerMobile {
+        a {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: $darkOne;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
