@@ -1,0 +1,22 @@
+name: first-github-action
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Hello Wordl!'
+  live:
+    name: Live
+    environment: Live
+    runs-on: ubuntu-latest
+    steps:
+      - name: run ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CONTABO_HOST }}
+          username: root
+          key: ${{ secrets.CONTABO_SSH_PRIVATE_KEY}}
+          port: 22
+          script: |
+            cd 10finger
+            npm run start-live
