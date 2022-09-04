@@ -9,6 +9,7 @@ jobs:
     name: Live
     environment: Live
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: run ssh
         uses: appleboy/ssh-action@master
