@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 app.post('/login', async(req, res) => {
 
     if (req.body.mail && req.body.password) {
-        let queryUser = `SELECT mail, password_hash, user_id, premium FROM user WHERE mail=${mysql.escape(req.body.mail)}`;
+        let queryUser = `SELECT mail, password_hash, user_id, premium, ads FROM user WHERE mail=${mysql.escape(req.body.mail)}`;
         
         let result =  await connection.asyncquery(queryUser)
 
@@ -17,7 +17,7 @@ app.post('/login', async(req, res) => {
         bcrypt.compare(req.body.password, result[0].password_hash, async (e, same) => {
             if (same) {
                 let uuid = v4();
-                loggedInUsers.push({session: uuid, id: result[0].user_id, premium: result[0].premium});
+                loggedInUsers.push({session: uuid, id: result[0].user_id, premium: result[0].premium, ads: result[0].ads});
                 res.cookie('session', uuid)
                 res.cookie('id', result[0].user_id)
                 res.redirect('/');

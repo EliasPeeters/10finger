@@ -2,7 +2,8 @@ let checkLogin = require('../checkLogins');
 
 app.get('/', (req, res) => {
     let data = {
-        loggedIn: false
+        loggedIn: false,
+        ads: 3
     }
 
     let user = checkLogin.checkLogin(req);
@@ -11,6 +12,6 @@ app.get('/', (req, res) => {
         data = user;
         data.loggedIn = true
     } 
-
+    console.log(data)
     res.render('home', {data})
 })
