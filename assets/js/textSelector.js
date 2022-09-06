@@ -40,10 +40,13 @@ function selectText(textID) {
 
 
 function selectBookTextNotLoggedIn(id, type) {
-    selectedType = type;
-    selectedID = id;
-    restart();
-    closeOverlay();
+    if (document.getElementById('generalOverlay').classList.contains('open')) {
+        selectedType = type;
+        selectedID = id;
+        restart();
+        closeOverlay();
+    }
+    
 }
 
 
