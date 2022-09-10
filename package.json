@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-local": "node main.js",
+    "start": "node main.js",
     "start-live": "git reset --hard; git pull; npm i; npm run sass; pm2 restart typingBob",
     "sass": "sass ./scss:./assets/css/"
   },

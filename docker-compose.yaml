@@ -1,0 +1,17 @@
+version: '3'
+services:
+  website:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '3031:3031'
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'fingers'
+      MYSQL_DATABASE: 'fingersDB'
+      MYSQL_USER: 'fingers'
+      MYSQL_PASSWORD: 'uHVy93yhwUKrsoKpALwnDSzb8sYMGBBr'
+    volumes:
+      - ./data:/var/lib/mysql

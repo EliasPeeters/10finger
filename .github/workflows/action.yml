@@ -20,4 +20,6 @@ jobs:
           port: 22
           script: |
             cd 10finger
-            npm run start-live
+            git reset --hard
+            git pull
+            docker compose up -d --build
