@@ -8,7 +8,8 @@ COPY package-lock.json .
 
 RUN npm i
 COPY . .
-COPY credentials.json ~/credentials.json
+RUN mkdir /root
+COPY credentials.json /root/credentials.json
 RUN npm run sass
 
 CMD [ "npm", "start" ]
